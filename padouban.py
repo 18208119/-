@@ -15,9 +15,9 @@ s = requests.Session()
 # 词云形状图片
 WC_MASK_IMG = 'Emile.jpg'
 # 影评数据保存文件
-COMMENTS_FILE_PATH = 'douban_comments.txt'
+COMMENTS_FILE_PATH = 'D:\\python代码\\untitled\\payipa\\douban_comments.txt'
 # 词云字体
-WC_FONT_PATH = '/Library/Fonts/Songti.ttc'
+WC_FONT_PATH = 'D:\\python代码\\untitled\\payipa\\Songti.ttc'
 
 
 def login_douban():
@@ -66,7 +66,7 @@ def spider_comment(page=0):
     if not comments:
         return 0
     # 写入文件
-    with open(COMMENTS_FILE_PATH, 'a+', encoding=r.encoding) as file:
+    with open(COMMENTS_FILE_PATH, 'w', encoding=r.encoding) as file:
         file.writelines('\n'.join(comments))
     return 1
 
